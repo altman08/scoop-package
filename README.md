@@ -9,5 +9,6 @@ scoop bucket add my-bucket https://github.com/altman08/scoop-package
 ## 安装应用
 
 ```powershell
-scoop install piliplus
+scoop install my-bucket/piliplus
+scoop install my-bucket/songloft-player
 ```
