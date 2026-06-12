@@ -1,0 +1,23 @@
+{
+  "version": "1.2.0",
+  "description": "A Linux-like watch command for Windows - Executes a program periodically, showing output fullscreen.",
+  "homepage": "https://github.com/echocat/watch",
+  "license": "MPL-2.0",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/echocat/watch/releases/download/v1.2.0/watch-windows-amd64.exe#/watch.exe",
+      "hash": "placeholder"
+    }
+  },
+  "bin": ["watch.exe"],
+  "checkver": {
+    "github": "https://github.com/echocat/watch"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/echocat/watch/releases/download/v$version/watch-windows-amd64.exe#/watch.exe"
+      }
+    }
+  }
+}
