@@ -14,4 +14,5 @@ scoop install my-bucket/songloft-player
 scoop install my-bucket/ncmdump-go
 scoop install my-bucket/ncmdump
 scoop install my-bucket/watch
+scoop install my-bucket/wireguard
 ```
