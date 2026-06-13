@@ -1,13 +1,13 @@
 {
-    "version": "1.0",
+    "version": "1.1",
     "description": "WireGuard for Windows - Fast, modern, secure VPN tunnel.",
     "homepage": "https://github.com/altman08/wireguard-windows",
     "license": "MIT",
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/altman08/wireguard-windows/releases/download/v1.0/wireguard-amd64-1.0.exe#/wireguard.exe",
-                "https://github.com/altman08/wireguard-windows/releases/download/v1.0/wg-amd64-1.0.exe#/wg.exe"
+                "https://github.com/altman08/wireguard-windows/releases/download/v1.1/wireguard-amd64-1.1.exe#/wireguard.exe",
+                "https://github.com/altman08/wireguard-windows/releases/download/v1.1/wg-amd64-1.1.exe#/wg.exe"
             ],
             "hash": [
                 "602d74e42fc7df327e571e071a6508d090014c7ecce240eb5af64dfa2e7ca7ef",
@@ -15,9 +15,15 @@
             ]
         }
     },
-    "bin": ["wireguard.exe", "wg.exe"],
+    "bin": [
+        "wireguard.exe",
+        "wg.exe"
+    ],
     "shortcuts": [
-        ["wireguard.exe", "WireGuard"]
+        [
+            "wireguard.exe",
+            "WireGuard"
+        ]
     ],
     "checkver": {
         "url": "https://api.github.com/repos/altman08/wireguard-windows/releases/latest",
