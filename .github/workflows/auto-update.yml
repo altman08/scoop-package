@@ -2,7 +2,7 @@ name: Auto Update Buckets
 
 on:
   schedule:
-    - cron: '0 2 * * *'  # 每天北京时间 10:00 执行（UTC+8）
+    - cron: '0 16 * * *'  # 每天北京时间 00:00 执行（UTC+8）
   workflow_dispatch:       # 支持手动触发
 
 jobs:
