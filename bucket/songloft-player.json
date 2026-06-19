@@ -1,12 +1,12 @@
 {
-    "version": "2.8.5",
+    "version": "2.8.6",
     "description": "Songloft Player - A cross-platform music player",
     "homepage": "https://github.com/songloft-org/songloft-player",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/songloft-org/songloft-player/releases/download/v2.8.5/songloft-windows-x64.zip",
-            "hash": "e0393a185a322f735321a30e2774984bbf330f26aebcbe5d2d7699dbb4b40d9f"
+            "url": "https://github.com/songloft-org/songloft-player/releases/download/v2.8.6/songloft-windows-x64.zip",
+            "hash": "169542abed25565207793c06f43fd90e3c08b23f2e991b115077251515628543"
         }
     },
     "bin": "songloft_flutter.exe",
