@@ -15,15 +15,9 @@
             ]
         }
     },
-    "bin": [
-        "wireguard.exe",
-        "wg.exe"
-    ],
+    "bin": "wg.exe",
     "shortcuts": [
-        [
-            "wireguard.exe",
-            "WireGuard"
-        ]
+        ["wireguard.exe", "WireGuard"]
     ],
     "checkver": {
         "url": "https://api.github.com/repos/altman08/wireguard-windows/releases/latest",
