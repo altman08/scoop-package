@@ -23,6 +23,9 @@
         ],
         "regex": "v([\\d.]+)"
     },
+    "uninstall": {
+        "script": "Remove-Item \"$env:APPDATA\\com.songloft\" -Recurse -Force -ErrorAction SilentlyContinue"
+    },
     "autoupdate": {
         "architecture": {
             "64bit": {
