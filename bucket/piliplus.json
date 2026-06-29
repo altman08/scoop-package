@@ -13,6 +13,15 @@
     "shortcuts": [
         ["piliplus.exe", "PiliPlus"]
     ],
+    "post_uninstall": [
+        "if ($purge) {",
+        "    $parent = \"$env:APPDATA\\com.example\"",
+        "    Remove-Item \"$parent\\piliplus\" -Recurse -Force -ErrorAction SilentlyContinue",
+        "    if ((Test-Path $parent) -and (Get-ChildItem $parent -Force | Measure-Object).Count -eq 0) {",
+        "        Remove-Item $parent -Force -ErrorAction SilentlyContinue",
+        "    }",
+        "}"
+    ],
     "checkver": {
         "script": [
             "$response = Invoke-RestMethod 'https://api.github.com/repos/bggRGjQaUbCoE/PiliPlus/releases/latest'",
