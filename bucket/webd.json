@@ -1,0 +1,14 @@
+{
+    "version": "20240711",
+    "description": "Webd - A lightweight and portable web-based file sharing/managing server, less than 90KB, with flexible permission control and user authentication.",
+    "homepage": "https://webd.cf/webd/",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://webd.cf/webd/webd_dl/20240223/webd-20240711-win32.7z",
+            "hash": "0273464dc11c060e842967fae380fd381f3a9e257245769869edf8c71017d771",
+            "extract_dir": "webd"
+        }
+    },
+    "bin": "webd.exe"
+}
