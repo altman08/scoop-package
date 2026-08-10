@@ -1,0 +1,20 @@
+{
+    "version": "Darkone-v4.0",
+    "description": "foobar2000 - An advanced freeware audio player for Windows.",
+    "homepage": "https://www.foobar2000.org/",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/altman08/scoop-package/releases/download/binary/foobar2000.7z",
+            "hash": "180e82e6aaa79eeefe0cb29715c5a9eee04e27e787f1a14f55d21b2bcadf4971"
+        }
+    },
+    "persist": "profile",
+    "bin": "foobar2000.exe",
+    "shortcuts": [
+        [
+            "foobar2000.exe",
+            "foobar2000"
+        ]
+    ]
+}

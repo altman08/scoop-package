@@ -15,4 +15,6 @@ scoop install my-bucket/ncmdump-go
 scoop install my-bucket/ncmdump
 scoop install my-bucket/watch
 scoop install my-bucket/wireguard
+scoop install my-bucket/webd
+scoop install my-bucket/foobar2000
 ```
