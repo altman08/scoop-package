@@ -1,0 +1,26 @@
+{
+    "version": "2.0.4",
+    "description": "uTorrent - A lightweight and efficient BitTorrent client for Windows.",
+    "homepage": "https://www.utorrent.com/",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/altman08/scoop-package/releases/download/binary/uTorrent.2.0.4.rar",
+            "hash": "998a41fc1efdc6c034d1534fbb9197040f2959cb19d8d8d48bc93f5e7b59a9f5",
+            "extract_dir": "uTorrent"
+        }
+    },
+    "persist": [
+        "dht.dat",
+        "resume.dat",
+        "rss.dat",
+        "settings.dat"
+    ],
+    "bin": "uTorrent.exe",
+    "shortcuts": [
+        [
+            "uTorrent.exe",
+            "uTorrent"
+        ]
+    ]
+}

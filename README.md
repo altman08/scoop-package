@@ -16,4 +16,5 @@ scoop install my-bucket/watch
 scoop install my-bucket/wireguard
 scoop install my-bucket/webd
 scoop install my-bucket/foobar2000
+scoop install my-bucket/utorrent
 ```
