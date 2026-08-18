@@ -17,4 +17,7 @@ scoop install my-bucket/wireguard
 scoop install my-bucket/webd
 scoop install my-bucket/foobar2000
 scoop install my-bucket/utorrent
+scoop install my-bucket/chromium-clang-avx
+scoop install my-bucket/chromium-clang-avx2
+scoop install my-bucket/chromium-clang-avx512
 ```

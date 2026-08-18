@@ -1,0 +1,43 @@
+{
+    "version": "153.0.7993.0-r1674068",
+    "description": "Chromium (Clang build, AVX optimized) - Unofficial Chromium build for CPUs supporting AVX but not AVX2/AVX-512. Conflicts with chromium-clang-avx2 / chromium-clang-avx512, install only one variant matching your CPU.",
+    "homepage": "https://github.com/RobRich999/Chromium_Clang",
+    "license": "BSD-3-Clause",
+    "notes": "This build conflicts with chromium-clang-avx2 / chromium-clang-avx512 (same 'chrome.exe' bin). Only install one variant matching your CPU's instruction set support.",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/RobRich999/Chromium_Clang/releases/download/v153.0.7993.0-r1674068-win64-avx/chrome.zip",
+            "hash": "1cc2a009fd108e61c1c8409cf57927f3448c40f8189edec5200789b233cc3195"
+        }
+    },
+    "conflicts": [
+        "chromium-clang-avx2",
+        "chromium-clang-avx512"
+    ],
+    "extract_dir": "chrome-win32",
+    "bin": "chrome.exe",
+    "shortcuts": [
+        [
+            "chrome.exe",
+            "Chromium Clang (AVX)"
+        ]
+    ],
+    "post_uninstall": [
+        "if ($purge) {",
+        "    Remove-Item \"$env:LOCALAPPDATA\\Chromium\" -Recurse -Force -ErrorAction SilentlyContinue",
+        "}"
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/RobRich999/Chromium_Clang/releases?per_page=30",
+        "jsonpath": "$[?(@.tag_name =~ /^v?[\\d.]+-r\\d+-win64-avx$/)].tag_name",
+        "regex": "(?<version>[\\d.]+)-r(?<revision>\\d+)-win64-avx$"
+    },
+    "autoupdate": {
+        "version": "$matchVersion-r$matchRevision",
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/RobRich999/Chromium_Clang/releases/download/v$matchVersion-r$matchRevision-win64-avx/chrome.zip"
+            }
+        }
+    }
+}
