@@ -1,0 +1,40 @@
+{
+    "version": "0.1.8-preview",
+    "description": "Jev Chat - An AI chat assistant with screen reading, conversation analysis and reply drafts.",
+    "homepage": "https://github.com/shengjidaguai-china/goutoujunshi-jev-chat",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/shengjidaguai-china/goutoujunshi-jev-chat/releases/download/v0.1.8-preview/goutoujunshi-jev-chat-windows-preview.zip",
+            "hash": "44334a6c4f29efbf9d6c17e85e2c7a48c7ca94a01e9d459c0b35e288c0f9b808"
+        }
+    },
+    "extract_dir": "goutoujunshi-jev-chat-windows",
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\config.json\")) {",
+        "    Set-Content -Path \"$dir\\config.json\" -Value '{}' -Encoding Ascii",
+        "}"
+    ],
+    "shortcuts": [
+        [
+            "goutoujunshi-jev-chat-windows.exe",
+            "Jev Chat"
+        ]
+    ],
+    "persist": "config.json",
+    "checkver": {
+        "url": "https://api.github.com/repos/shengjidaguai-china/goutoujunshi-jev-chat/releases/latest",
+        "jsonpath": "$.tag_name",
+        "regex": "^v?([\\d.]+(?:-[\\w.]+)?)$"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/shengjidaguai-china/goutoujunshi-jev-chat/releases/download/v$version/goutoujunshi-jev-chat-windows-preview.zip",
+                "hash": {
+                    "url": "https://github.com/shengjidaguai-china/goutoujunshi-jev-chat/releases/download/v$version/SHA256SUMS.txt"
+                }
+            }
+        }
+    }
+}

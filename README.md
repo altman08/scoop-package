@@ -21,4 +21,5 @@ scoop install my-bucket/utorrent
 scoop install my-bucket/chromium-clang-avx
 scoop install my-bucket/chromium-clang-avx2
 scoop install my-bucket/chromium-clang-avx512
+scoop install my-bucket/goutoujunshi-jev-chat
 ```
