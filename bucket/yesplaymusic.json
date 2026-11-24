@@ -1,0 +1,52 @@
+{
+    "version": "3.0.0",
+    "description": "YesPlayMusic - A music player for local libraries and plugin-based streaming",
+    "homepage": "https://github.com/qier222/YesPlayMusic",
+    "license": "GPL-3.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/qier222/YesPlayMusic/releases/download/v3.0.0/YesPlayMusic-3.0.0-windows-x64-portable.zip",
+            "hash": "1eb5890f34c2b9287d05a6695dac332beda9b56b78c6573d22e0fbdfd3279bd5"
+        }
+    },
+    "shortcuts": [
+        [
+            "YesPlayMusic.exe",
+            "YesPlayMusic"
+        ]
+    ],
+    "post_uninstall": [
+        "if ($purge) {",
+        "    $targets = @('HKCU:\\Software\\0xTangerine\\YesPlayMusic\\WinSparkle')",
+        "    if ($env:APPDATA) {",
+        "        $targets += Join-Path $env:APPDATA 'YesPlayMusic'",
+        "    } else {",
+        "        $profileRoot = if ($env:HOME) { $env:HOME } else { $env:USERPROFILE }",
+        "        if ($profileRoot) {",
+        "            $dataDir = Join-Path $profileRoot 'YesPlayMusic'",
+        "            foreach ($name in 'prefs.json', 'player.json', 'search_history.json', 'analytics.json', 'updater.json', 'plugins', 'plugin-data', 'logs', 'cache', 'page-cache') {",
+        "                $targets += Join-Path $dataDir $name",
+        "            }",
+        "        }",
+        "    }",
+        "    if ($env:LOCALAPPDATA) {",
+        "        $targets += Join-Path $env:LOCALAPPDATA 'YesPlayMusic\\Cache'",
+        "    } else {",
+        "        $targets += Join-Path ([IO.Path]::GetTempPath()) 'YesPlayMusic'",
+        "    }",
+        "    foreach ($target in $targets) {",
+        "        if (Test-Path -LiteralPath $target) {",
+        "            Remove-Item -LiteralPath $target -Recurse -Force -ErrorAction Stop",
+        "        }",
+        "    }",
+        "}"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/qier222/YesPlayMusic/releases/download/v$version/YesPlayMusic-$version-windows-x64-portable.zip"
+            }
+        }
+    }
+}
