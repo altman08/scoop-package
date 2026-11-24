@@ -1,0 +1,46 @@
+{
+    "version": "3.2.1",
+    "description": "Unofficial PC port of God of War III Remastered for PS4.",
+    "homepage": "https://github.com/FelipePrado0/SpartanPort",
+    "license": "GPL-2.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/FelipePrado0/SpartanPort/releases/download/windows-v3.2.1/spartanport-windows.zip",
+            "hash": "9ecab74c862eb4218e4fe084646d388305cfd7e8ef4c9f0584d548c800a62942"
+        }
+    },
+    "extract_dir": "spartanport-windows",
+    "bin": "SpartanPort.exe",
+    "shortcuts": [
+        [
+            "SpartanPort.exe",
+            "SpartanPort"
+        ],
+        [
+            "Play SpartanPort.exe",
+            "Play SpartanPort"
+        ]
+    ],
+    "persist": "source",
+    "env_set": {
+        "SPARTAN_DATA_DIR": "$persist_dir\\source",
+        "SPARTAN_GAME_DIR": "$persist_dir\\source\\game"
+    },
+    "post_install": "[System.IO.Directory]::CreateDirectory(\"$persist_dir\\source\\game\") | Out-Null",
+    "notes": "Copy your PS4 game files (eboot.bin, sce_module and sce_sys) into $persist_dir\\source\\game, then launch SpartanPort.",
+    "checkver": {
+        "url": "https://api.github.com/repos/FelipePrado0/SpartanPort/releases/latest",
+        "jsonpath": "$.tag_name",
+        "regex": "^windows-v([\\d.]+)$"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/FelipePrado0/SpartanPort/releases/download/windows-v$version/spartanport-windows.zip",
+                "hash": {
+                    "url": "$url.sha256"
+                }
+            }
+        }
+    }
+}
